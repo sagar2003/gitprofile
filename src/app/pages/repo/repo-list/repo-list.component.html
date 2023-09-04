@@ -1,0 +1,40 @@
+<div class="contaier mt-3 mb-3">
+  <div class="row" *ngIf="userRepos && userRepos.length>0">
+    <div class="col-lg-5">
+      <a
+        href="/repo/"
+        *ngFor="let repo of userRepos"
+        class="active-home pt-2 pb-2 list-group-item list-group-item-action flex-column align-items-start"
+        aria-current="true"
+      >
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{ repo.name }}</h5>
+          <button type="button" class="btn btn-success">
+            <small class="">Description</small>
+          </button>
+        </div>
+        <p class="mb-1" style="color: rgba(256, 256, 256, 0.5)">
+          {{ repo.language }} | {{ repo.visibility }} | {{ repo.updated_at }}
+        </p>
+      </a>
+    </div>
+    <div class="col-lg-6 mt-auto mb-auto ms-auto me-auto">
+      <h4
+        class="ms-auto me-auto"
+        [ngStyle]="{
+          'max-width': '320px',
+          width: 'fit-content',
+          'text-align': 'center'
+        }"
+      >
+        For more information click on the Description button
+      </h4>
+    </div>
+  </div>
+  
+  <div *ngIf="userRepos && userRepos.length==0" class="row">
+    <div class="col-lg-6 ms-auto me-auto">
+        <h4 style="text-align: center;" class="ms-auto me-auto mt-5 mb-5">No Repositories Found</h4>
+    </div>
+</div>
+</div>

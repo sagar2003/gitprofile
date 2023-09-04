@@ -1,0 +1,20 @@
+
+.bg-skew{
+    transform: skew(10deg);
+    background:  linear-gradient(to right, rgb(13, 58, 125) , rgb(8, 53, 204));
+    position: relative;
+    transition-duration: 800ms;
+    transform-origin: bottom left;
+    overflow :hidden;
+}
+
+.skew-content{
+    position: relative;
+    z-index: 1;
+    transition-timing-function: ease-in-out;
+    transition-duration: 800ms;
+    transform: skewX(-10deg);
+    transform-origin: bottom left;
+}
+
+

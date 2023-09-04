@@ -1,0 +1,13 @@
+<div class="container mt-3 mb-3">
+    <div *ngIf="userOrgs && userOrgs.length>0" class="row">
+        <div class="bg-card" *ngFor="let org of userOrgs" [ngStyle]="{'margin':'5px','display':'flex','width':'fit-content','cursor':'pointer'}">
+          <img src={{org.avatar_url}} [ngStyle]="{'padding':'0','width':'50px','height':'50px','border-radius':'25px'}" class="feature-img" alt="profile picture">
+          <h5 class="mt-auto mb-auto ms-3" [ngStyle]="{'width':'200px'}">{{org.login}}</h5>
+        </div>
+    </div>
+    <div *ngIf="userOrgs && userOrgs.length==0" class="row">
+        <div class="col-lg-6 ms-auto me-auto">
+            <h4 style="text-align: center;" class="ms-auto me-auto mt-5 mb-5">No Organizations Found</h4>
+        </div>
+    </div>
+</div>

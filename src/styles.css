@@ -1,1 +1,132 @@
 /* You can add global styles to this file, and also import other style files */
+.dark-bg {
+  background-color: rgb(33, 33, 33);
+  color: white;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  text-align: center;
+  z-index: 1000;
+}
+
+.feature-img {
+  width: 50px;
+  height: 50px;
+  margin: 15px;
+  object-fit: cover;
+}
+
+.feature-img-card {
+  text-align: center;
+  box-shadow: 0 0 2px 2px #323232;
+  transition-duration: 200ms;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.feature-img-card:hover{
+    transform: translate(15px,0px);
+    transition-duration: 200ms;
+}
+
+.active-home{
+    background-color: #323232;
+    transform: translate(15px,0px);
+    transition-duration: 200ms;
+}
+
+.bg-card{
+  background-color: rgba(255, 255, 255, 0.664);
+  border-radius: 20px;
+  color: black;
+  width: fit-content;
+}
+
+.pt-10{
+  padding-top: 50px;
+}
+
+.brand-logo{
+  height: 50px;
+  width: 50px;
+}
+
+.form-control:focus{
+  border-color: green;
+}
+
+.bg-git-explore{
+  object-fit:fill;
+  height: fit-content;
+  width: 100vw;
+  min-height: 40vh;
+  background-repeat: no-repeat;
+  background: linear-gradient(to right,rgba(16, 3, 117, 0.314),rgba(55, 7, 98, 0.588));
+}
+
+.bg-float-back{
+  float: right;
+  height: 250px;
+  margin-right: auto;
+  z-index: -1000;
+}
+
+.left-slide{
+  animation-timing-function: ease-in-out;
+  animation-name: 'alphaUp';
+  animation-duration: 800ms;
+}
+
+.pop-up{
+  animation: popup 1000ms ease-in-out;
+}
+
+.typing-text{
+  animation: typing 2s steps(40);
+}
+
+.jump{
+  animation: jumpnow 800ms ease-in-out;
+}
+
+@keyframes jumpnow {
+  50%{
+    transform: translate(0,-20px);
+  }
+}
+
+@keyframes typing {
+  from{
+    width: 0;
+  }
+  to{
+    width: 100%;
+  }
+}
+
+
+@keyframes alphaUp{
+  0%{
+    opacity: 0.0;
+    transform: translate(50px,0);
+  }
+  100%{
+    opacity: 1.0;
+    transform: translate(0px,0);
+  }
+}
+
+@keyframes popup {
+  0%{
+    opacity: 0.0;
+  }
+  100%{
+    opacity: 1.0;
+  }
+}
