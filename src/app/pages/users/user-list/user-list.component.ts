@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -6,15 +6,21 @@ import { UsersService } from '../users.service';
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
 })
-export class UserListComponent {
+export class UserListComponent implements OnInit {
+  userlist:any;
+  id="";
+
   constructor(private userService: UsersService) {
-    userService.ackSearchList.subscribe((val) => {
-      userService.getUsers(val).subscribe((data) => {
+    
+  }
+
+  ngOnInit(){
+    this.userService.ackSearchList.subscribe((val) => {
+      this.userService.getUsers(val).subscribe((data) => {
         this.userlist = data;
+        this.userlist=this.userlist.items
       });
     });
   }
-  id:string="";
 
-  userlist: any="";
 }

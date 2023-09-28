@@ -1,4 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, ComponentRef, Input } from '@angular/core';
+import { OrgsComponent } from 'src/app/pages/orgs/orgs.component';
+import { RepoListComponent } from 'src/app/pages/repo/repo-list/repo-list.component';
 
 @Component({
   selector: 'app-nav-user-detail',
@@ -13,6 +15,10 @@ export class NavUserDetailComponent {
   
   tabChange(t:number){
     this.tab=t;
+  }
+
+  setUserIdToChild(component:RepoListComponent|OrgsComponent){
+    component.userId=this.userId;
   }
 
 }

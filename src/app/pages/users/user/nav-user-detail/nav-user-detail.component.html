@@ -3,9 +3,9 @@
   <li class="nav-item" role="presentation">
     <button
       class="nav-link"
+      routerLink="repos"
+      routerLinkActive="active"
       style="color: rgb(16, 119, 128);"
-      (click)="tabChange(1)"
-      [ngClass]="tab == 1 ? 'active' : ''"
     >
       Repositories
     </button>
@@ -14,8 +14,8 @@
     <button
       class="nav-link"
       style="color: rgb(16, 119, 128);"
-      (click)="tabChange(2)"
-      [ngClass]="tab == 2 ? 'active' : ''"
+      routerLink="orgs"
+      routerLinkActive="active"
     >
       Organizations
     </button>
@@ -23,12 +23,5 @@
  
 </ul>
 
-<!-- Tab panes -->
-<div class="tab-content">
-  <div [ngClass]="tab == 1 ? 'active' : ''" class="tab-pane">
-    <app-repo-list userId="{{userId}}"></app-repo-list>
-  </div>
-  <div [ngClass]="tab == 2 ? 'active' : ''" class="tab-pane">
-    <app-orgs userId="{{userId}}"></app-orgs>
-  </div>
-</div>
+<router-outlet (activate)="setUserIdToChild($event)"></router-outlet>
+

@@ -1,28 +1,26 @@
 <div class="pt-5" style="background-color: rgb(40, 40, 40);">
-  <app-layout-feature>
-    <div class="row mt-auto mb-auto" style="text-align: center">
-      <div class="col-sm-4" style="text-align: right;">
-        <div [ngStyle]="{'flex-direction':'column','display':'flex'}">
-            <a class="nav-link" routerLink="">Home</a>
-            <a class="nav-link" routerLink="/users">Users</a>
-            <a class="nav-link" routerLink="/repos">Repositories</a>
-            <a class="nav-link" routerLink="/activity">Activities</a>
-            <a class="nav-link" routerLink="">My Profile</a>
-        </div>
-      </div>
-      <div class="col-sm-4 ms-auto me-auto">
-        <img appAnimate whichclass="jump"
-          src="https://banner2.cleanpng.com/20180320/pje/kisspng-logo-small-to-medium-sized-cats-font-github-5ab0b92b8a5a12.2892518515215311795667.jpg"
-          class="img-fluid rounded brand-logo"
-          alt=""
-        />
-        <h4 class="mt-3">Git Profile Viewer</h4>
-      </div>
-      <div class="col-sm-4" style="text-align: left;">
-        <h6>Feel free for any query</h6>
-        <p>please contact below</p>
-        <p>support@email.com</p>
+  <div [ngStyle]="{'display':'flex'}" class="p-3 mt-auto mb-auto" style="text-align: center">
+    <div  class="col-4" style="text-align: right;">
+      <div>
+          <a class="nav-link" routerLink="">Home</a>
+          <a class="nav-link" routerLink="/users">Users</a>
+          <a class="nav-link" routerLink="/repos">Repositories</a>
+          <a class="nav-link" routerLink="/activity">Activities</a>
+          <a class="nav-link" routerLink="">My Profile</a>
       </div>
     </div>
-  </app-layout-feature>
+    <div class="col-4 ms-auto me-auto">
+      <img appAnimate whichclass="jump"
+        src="https://banner2.cleanpng.com/20180320/pje/kisspng-logo-small-to-medium-sized-cats-font-github-5ab0b92b8a5a12.2892518515215311795667.jpg"
+        class="img-fluid rounded brand-logo"
+        alt=""
+      />
+      <h4 class="mt-3">Git Profile Viewer</h4>
+    </div>
+    <div class="col-4" style="text-align: left;">
+      <h6>Feel free for any query</h6>
+      <p>please contact below</p>
+      <p>support@email.com</p>
+    </div>
+  </div>
 </div>

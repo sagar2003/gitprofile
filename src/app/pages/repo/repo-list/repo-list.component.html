@@ -1,5 +1,6 @@
 <div class="contaier mt-3 mb-3">
   <div class="row" *ngIf="userRepos && userRepos.length>0">
+    <ng-content></ng-content>
     <div class="col-lg-5">
       <a
         href="/repo/"
@@ -13,8 +14,8 @@
             <small class="">Description</small>
           </button>
         </div>
-        <p class="mb-1" style="color: rgba(256, 256, 256, 0.5)">
-          {{ repo.language }} | {{ repo.visibility }} | {{ repo.updated_at }}
+        <p class="mb-1" [style.color]="'rgba(256, 256, 256, 0.5)'">
+          {{ repo.language }} | {{ repo.visibility }} | {{ repo.updated_at | date }}
         </p>
       </a>
     </div>

@@ -15,6 +15,14 @@ export class UsersService {
     return this.http.get(("https://api.github.com/search/users?q="+val));
   }
 
+  searchRepos(query:string){
+    return this.http.get('https://api.github.com/search/repositories?q='+query)
+  }
+
+  searchOrgs(query:string){
+
+  }
+
   getSingleUser(val:string){
     return this.http.get(("http://api.github.com/users/"+val).toString());
   }

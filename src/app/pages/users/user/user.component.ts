@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UsersService } from '../users.service';
 
 @Component({
@@ -7,15 +7,26 @@ import { UsersService } from '../users.service';
   templateUrl: './user.component.html',
   styleUrls: ['./user.component.css']
 })
-export class UserComponent {
+export class UserComponent implements OnInit{
 
   userId:any;
   userData:any="";
 
-  constructor(private userService:UsersService,private activatedRouter:ActivatedRoute){
-    this.userId = activatedRouter.snapshot.queryParams['id'];
-    userService.getSingleUser(this.userId).subscribe((data)=>{
-      this.userData = data;
+  constructor(private activatedRouter:ActivatedRoute,private router:Router){
+    
+  }
+
+  ngOnInit(): void {
+    this.activatedRouter.data.subscribe({
+      next:({user})=>{
+        this.userData = user;
+        this.userId=this.activatedRouter.snapshot.params['id'];
+        this.router.navigate(['repos'],{relativeTo:this.activatedRouter})
+      },error:(err)=>{
+
+      }
     })
   }
+
+
 }

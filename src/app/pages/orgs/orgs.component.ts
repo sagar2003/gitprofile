@@ -1,26 +1,46 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { UsersService } from '../users/users.service';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-orgs',
   templateUrl: './orgs.component.html',
-  styleUrls: ['./orgs.component.css']
+  styleUrls: ['./orgs.component.css'],
 })
+export class OrgsComponent implements OnInit ,OnDestroy{
+  @Input() userId: any;
+  userOrgs: any;
+  orgSubs:Subscription|undefined;
 
-export class OrgsComponent  implements AfterViewInit{
+  constructor(
+    private userService: UsersService,
+    private activatedRoute: ActivatedRoute
+  ) {
+    this.orgSubs = userService.ackSearchList.subscribe((val) => {
+      userService.getOrgs(val).subscribe({
+        next: (data) => {
+          this.userOrgs = data;
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+    });
+  }
+  ngOnDestroy(): void {
+    this.orgSubs?.unsubscribe();
+  }
 
-  @Input() userId:any;
-  userOrgs:any;
+  ngOnInit() {
+    this.activatedRoute.data.subscribe({
+      next: ({ orgs }) => {
+        this.userOrgs = orgs;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
+  }
   
-  constructor(private orgsService:UsersService){
-
-  }
-
-  ngAfterViewInit(){
-    this.orgsService.getOrgs(this.userId).subscribe((data)=>{
-      this.userOrgs=data;
-      console.log(this.userOrgs.length)
-    })
-  }
-
 }

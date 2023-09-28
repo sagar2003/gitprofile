@@ -16,13 +16,14 @@ import { RepoComponent } from './pages/repo/repo.component';
 import { ActComponent } from './pages/act/act.component';
 import { AnimateDirective } from './animate.directive';
 import { HttpClientModule } from "@angular/common/http";
-import { TempHolderComponent } from './pages/users/temp-holder/temp-holder.component';
+import { SearchComponent } from './pages/users/search/search.component';
 import { UserExplainComponent } from './pages/home/feature-explain/user-explain/user-explain.component';
 import { UserListComponent } from './pages/users/user-list/user-list.component';
 import { UserComponent } from './pages/users/user/user.component';
 import { NavUserDetailComponent } from './pages/users/user/nav-user-detail/nav-user-detail.component';
 import { RepoListComponent } from './pages/repo/repo-list/repo-list.component';
 import { OrgsComponent } from './pages/orgs/orgs.component';
+import { Page404Component } from './pages/page404/page404.component';
 
 @NgModule({
   declarations: [
@@ -39,13 +40,14 @@ import { OrgsComponent } from './pages/orgs/orgs.component';
     RepoComponent,
     ActComponent,
     AnimateDirective,
-    TempHolderComponent,
+    SearchComponent,
     UserExplainComponent,
     UserListComponent,
     UserComponent,
     NavUserDetailComponent,
     RepoListComponent,
-    OrgsComponent
+    OrgsComponent,
+    Page404Component
   ],
   imports: [
     BrowserModule,
