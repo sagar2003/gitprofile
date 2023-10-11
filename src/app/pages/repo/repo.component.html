@@ -1,0 +1,88 @@
+<app-layout-feature>
+  <div class="container pt-5 divuserrepo">
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <div class="col-lg-8">
+            <h3>
+              {{ repodata.name
+              }}<span class="c-gray t-border">{{ repodata.visibility }}</span>
+            </h3>
+            <p class="m-0 c-fade">{{ repodata.description }}</p>
+            <p class="m-0 c-fade">{{ repodata.language }}</p>
+            <p class="m-0 c-fade">{{ repodata.size / 1000 }} mb</p>
+          </div>
+          <div class="col-lg-4 m-auto">
+            <a
+              class="btn btn-success"
+              href="{{ repodata.svn_url }}"
+              target="_blank"
+              role="button"
+              >View On Github</a
+            >
+          </div>
+
+          <div class="row mt-5">
+            <app-pbar [langs]="languages"></app-pbar>
+          </div>
+          <div class="row mt-4">
+            <h4>Branches</h4>
+            <div class="mt-2">
+              <ng-container  *ngFor="let branch of branches">
+                <label class="t-border">{{ branch.name }}</label>
+              </ng-container>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="card-dark card-repo-user">
+          <div class="row">
+            <div class="col-6 ms-auto me-auto">
+              <img
+                class="card-img-top img-rounded-full"
+                src="{{ repodata.owner.avatar_url }}"
+                alt="owner_img"
+              />
+            </div>
+          </div>
+          <div class="row m-3">
+            <div class="col-12">
+              <div class="card-body">
+                <h4 class="card-title">{{ repodata.owner.login }}</h4>
+                <p>{{ repodata.owner.type }}</p>
+                <p>{{ repodata.owner.description }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <a
+                class="btn btn-success w-100"
+                href="{{ repodata.owner.html_url }}"
+                target="_blank"
+                role="button"
+              >
+                Visit On Github</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-5">
+      <div class="col-6">
+        <app-carddata [timingdata]="timingdata"
+          ><h4>Timing Details</h4>
+          <hr
+        /></app-carddata>
+      </div>
+      <div class="col-6">
+        <app-carddata [licencedata]="licencedata"
+          ><h4>Licence</h4>
+          <hr
+        /></app-carddata>
+      </div>
+    </div>
+  </div>
+</app-layout-feature>

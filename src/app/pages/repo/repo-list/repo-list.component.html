@@ -3,7 +3,7 @@
     <ng-content></ng-content>
     <div class="col-lg-5">
       <a
-        href="/repo/"
+        routerLink="/repo/{{repo.full_name}}"
         *ngFor="let repo of userRepos"
         class="active-home pt-2 pb-2 list-group-item list-group-item-action flex-column align-items-start"
         aria-current="true"

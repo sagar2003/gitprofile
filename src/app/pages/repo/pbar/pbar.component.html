@@ -1,0 +1,13 @@
+<div class="container">
+    <div class="row" [ngStyle]="{'text-align':'center'}">
+        <ng-container *ngFor="let lan of langs; let i=index">
+            <div class="m-0 p-0"  [ngStyle]="{'border-radius':'10px','min-width':'fit-content','width':lan.val+'%','background-color':geColorCode(i)}">{{lan.key}}</div>
+        </ng-container>
+        
+    </div>
+    <ul class="c-gray ps-3 mt-2" [ngStyle]="{'display':'flex','flex-wrap':'wrap'}">
+        <ng-container  *ngFor="let lan of langs">
+            <li [ngStyle]="{'margin-right':'40px','font-size':'12pt'}">{{lan.key}}({{lan.val}}%)</li>
+        </ng-container>
+    </ul>
+</div>

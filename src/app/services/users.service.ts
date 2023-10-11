@@ -35,4 +35,16 @@ export class UsersService {
     return this.http.get("https://api.github.com/users/"+user+"/orgs");
   }
 
+  getSingleRepo(user:string,reponame:string){
+    return this.http.get("https://api.github.com/repos/"+user+"/"+reponame)
+  }
+
+  getSingleRepoLanguages(url:string){
+    return this.http.get<{[language: string]: number}>(url);
+  }
+
+  getSingleRepoBranches(url:string){
+    return this.http.get(url);
+  }
+
 }

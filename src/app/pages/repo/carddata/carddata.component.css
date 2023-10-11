@@ -1,0 +1,7 @@
+.card-border-only{
+    border-radius: 15px;
+    border-color: rgb(202, 201, 201);
+    border-width: 1px;
+    border-style: solid;
+    padding: 15px;
+}

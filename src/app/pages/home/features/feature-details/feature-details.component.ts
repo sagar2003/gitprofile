@@ -39,18 +39,6 @@ export class FeatureDetailsComponent {
     })
   }
 
-  navigateTo(){
-    switch(this.ctab){
-      case 1:
-        this.router.navigate(["/users"])
-        break;
-      case 2:
-        this.router.navigate(["/repos"])
-        break;
-      case 3:
-        this.router.navigate(["/activity"])
-        break;
-    }
-  }
+  
 
 }

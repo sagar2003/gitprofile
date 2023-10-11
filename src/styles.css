@@ -4,6 +4,34 @@
   color: white;
 }
 
+.card-dark{
+  border-radius: 15px;
+  background-color: #323232;
+  box-shadow: 0 0 15px 5px #181818;
+  padding: 10px;
+}
+
+.c-gray{
+  color: #b1b1b1;
+}
+
+.t-border{
+  border-radius: 10px;
+  border-width: 1px;
+  border-style: solid;
+  font-size: small;
+  margin-left: 10px;
+  padding: 3px 10px 5px 10px;
+}
+
+.img-rounded-full{
+  border-radius: 50%;
+}
+
+.card-body{
+  text-align: center;
+}
+
 .header{
   position: fixed;
   top: 0;
@@ -75,6 +103,7 @@
   height: 250px;
   margin-right: auto;
   z-index: -100;
+  background-blend-mode:color-burn;
 }
 
 .left-slide{
@@ -130,3 +159,4 @@
     opacity: 1.0;
   }
 }
+

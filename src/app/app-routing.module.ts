@@ -9,6 +9,7 @@ import {
   SingleUserDataReolver,
   SingleUserOrgsResolver,
   SingleUserRepoResolver,
+  SingleUserSingleRepoResolver,
 } from './resolv/single-user.service';
 import { RepoListComponent } from './pages/repo/repo-list/repo-list.component';
 import { OrgsComponent } from './pages/orgs/orgs.component';
@@ -33,6 +34,11 @@ const routes: Routes = [
         component: OrgsComponent,
       },
     ],
+  },
+  {
+    path: 'repo/:owner/:reponame',
+    component: RepoComponent,
+    resolve: { repo: SingleUserSingleRepoResolver },
   },
   { path: 'activity', component: ActComponent },
   { path: 'repos', component: RepoComponent },

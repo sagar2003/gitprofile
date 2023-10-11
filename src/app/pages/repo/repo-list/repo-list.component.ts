@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { UsersService } from '../../users/users.service';
+import { UsersService } from '../../../services/users.service';
 import {
   ActivatedRoute,
   RouterState,
@@ -25,7 +25,6 @@ export class RepoListComponent implements OnInit,OnDestroy {
       this.getReposSubs = userService.getRepos(query).subscribe({
         next: (data) => {
           this.userRepos = data;
-          console.log(data)
         },
         error: (err) => {
           console.log(err);

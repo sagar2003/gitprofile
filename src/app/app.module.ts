@@ -24,6 +24,9 @@ import { NavUserDetailComponent } from './pages/users/user/nav-user-detail/nav-u
 import { RepoListComponent } from './pages/repo/repo-list/repo-list.component';
 import { OrgsComponent } from './pages/orgs/orgs.component';
 import { Page404Component } from './pages/page404/page404.component';
+import { CarddataComponent } from './pages/repo/carddata/carddata.component';
+import { PbarComponent } from './pages/repo/pbar/pbar.component';
+import { InterseptorService } from './services/interseptor.service';
 
 @NgModule({
   declarations: [
@@ -47,7 +50,9 @@ import { Page404Component } from './pages/page404/page404.component';
     NavUserDetailComponent,
     RepoListComponent,
     OrgsComponent,
-    Page404Component
+    Page404Component,
+    CarddataComponent,
+    PbarComponent
   ],
   imports: [
     BrowserModule,

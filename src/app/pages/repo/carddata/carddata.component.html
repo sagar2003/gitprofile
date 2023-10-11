@@ -1,0 +1,15 @@
+<div class="container card-border-only c-gray">
+    <div class="row">
+        <ng-content></ng-content>
+    </div>
+    <div *ngIf="timingdata" class="row">
+        <p class="m-0 c-gray">Creation date : {{timingdata.creation|date}}</p>
+        <p class="m-0">Last updatation : {{timingdata.updated|date}}</p>
+        <p class="m-0">Last Push date : {{timingdata.pushed|date}}</p>
+    </div>
+    <div *ngIf="licencedata" class="row">
+        <p class="m-0">Licence : {{licencedata.licence?licencedata.licence:'No Licencse Found'}}</p>
+        <p class="m-0">Visibility : {{licencedata.visibility}}</p>
+        <p class="m-0">Template : {{licencedata.template?'Yes':'No'}}</p>
+    </div>
+</div>

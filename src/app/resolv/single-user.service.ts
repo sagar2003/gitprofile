@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { ActivatedRoute, ActivatedRouteSnapshot, ResolveFn, RouterStateSnapshot } from '@angular/router';
-import { UsersService } from '../pages/users/users.service';
+import { UsersService } from '../services/users.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,4 +20,8 @@ export const SingleUserRepoResolver:ResolveFn<any> = (route:ActivatedRouteSnapsh
 
 export const SingleUserOrgsResolver:ResolveFn<any> = (route:ActivatedRouteSnapshot,state:RouterStateSnapshot) => {
   return inject(UsersService).getOrgs(route.parent?.params['id']);
+}
+
+export const SingleUserSingleRepoResolver:ResolveFn<any> = (router:ActivatedRouteSnapshot,state:RouterStateSnapshot) => {
+  return inject(UsersService).getSingleRepo(router.params['owner'],router.params['reponame']);
 }
