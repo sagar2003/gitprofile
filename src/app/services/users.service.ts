@@ -24,7 +24,7 @@ export class UsersService {
   }
 
   getSingleUser(val:string){
-    return this.http.get("http://api.github.com/users/"+val);
+    return this.http.get("https://api.github.com/users/"+val);
   }
 
   getRepos(user:string){
