@@ -10,7 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class InterseptorService implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler) {
-    const token = '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';
+    const token = 'your_token';
     const newheaders = request.headers.append(
       'Authorization',
       'Bearer ' + token
